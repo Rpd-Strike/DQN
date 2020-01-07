@@ -18,6 +18,7 @@ class Environment:
 
             s_, r, done, info = self.env.step(a)
             s_ = th.tensor(s_, dtype=th.float)
+            
             if done: # terminal state
                 s_ = None
 

@@ -11,10 +11,12 @@ class Brain(nn.Module):
         mij_s = 64
         self.model = nn.Sequential(
             nn.Linear(StateCnt, mij_s),
-            nn.Tanh(),
+            nn.ReLU(),
+            nn.Linear(mij_s, mij_s),
+            nn.ReLU(),
             nn.Linear(mij_s, ActionCnt)
         )
-        self.optimizer = th.optim.Adam(self.parameters(), lr = 5e-3)
+        self.optimizer = th.optim.Adam(self.parameters(), lr = 5e-4)
 
     def predict(self, s : th.Tensor):
         return self.model(s)

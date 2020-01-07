@@ -61,7 +61,7 @@ class Agent:
             if s_ is None:
                 t[a] = r
             else:
-                t[a] = r + GAMMA * th.argmax(p_[i])
+                t[a] = r + GAMMA * th.max(p_[i])
 
             x[i] = s
             y[i] = t
