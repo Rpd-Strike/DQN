@@ -10,7 +10,7 @@ BATCH_SIZE = 64
 GAMMA = 0.99
 MAX_EPSILON = 1
 MIN_EPSILON = 0.01
-LAMBDA = 0.01
+LAMBDA = 0.001
 
 class Agent:
     steps = 0
@@ -61,7 +61,7 @@ class Agent:
             if s_ is None:
                 t[a] = r
             else:
-                t[a] = r + GAMMA * th.argmax(p_[i])
+                t[a] = r + GAMMA * th.max(p_[i])
 
             x[i] = s
             y[i] = t

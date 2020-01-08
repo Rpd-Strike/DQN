@@ -1,11 +1,10 @@
 import Environment
 import Agent
+import matplotlib.pyplot as plt
 
 def main():
-    PROBLEM = 'CartPole-v0'
+    PROBLEM = 'CartPole-v1'
     env = Environment.Environment(PROBLEM)
-
-    print(env.env)
 
     stateCnt = env.env.observation_space.shape[0]
     actionCnt = env.env.action_space.n
@@ -13,9 +12,13 @@ def main():
 
     agent = Agent.Agent(stateCnt, actionCnt)
 
-    
+    lst = []
+
     while True:
-        env.run(agent)
+        for _ in range(100):
+            lst.append(env.run(agent))
+        plt.plot(lst)
+        plt.show()
 
 if __name__ == "__main__":
     main()
