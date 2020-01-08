@@ -10,7 +10,7 @@ BATCH_SIZE = 64
 GAMMA = 0.99
 MAX_EPSILON = 1
 MIN_EPSILON = 0.01
-LAMBDA = 0.001
+LAMBDA = 0.01
 
 class Agent:
     steps = 0

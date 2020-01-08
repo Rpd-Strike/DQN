@@ -15,7 +15,7 @@ def main():
     lst = []
 
     while True:
-        for _ in range(100):
+        for _ in range(25):
             lst.append(env.run(agent))
         plt.plot(lst)
         plt.show()

@@ -31,3 +31,4 @@ class Environment:
                 break
 
         print("Total reward:", R)
+        return R
